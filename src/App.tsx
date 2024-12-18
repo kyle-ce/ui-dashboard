@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
-import { cards } from "./data/Card";
+import { cards } from "./data/card";
 import { MdOutlineDarkMode, MdSunny } from "react-icons/md";
+import { useTheme } from "./components/ThemeContext";
 
 function App() {
   // Track dark mode state in localStorage or useState
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   // Effect to apply dark mode class to the body when darkMode state changes
   useEffect(() => {
     const body = document.body;
-    if (darkMode) {
+    if (theme === "dark") {
       body.classList.add("dark");
     } else {
       body.classList.remove("dark");
     }
-  }, [darkMode]);
+  }, [theme]);
 
   // Toggle function for dark mode
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleDarkMode = () =>
+    toggleTheme(theme === "light" ? "dark" : "light");
   return (
     <main className="w-full bg-background dark:bg-darkBackground">
       {/* Header */}
@@ -48,12 +50,8 @@ function App() {
                 onClick={toggleDarkMode}
                 className="p-2 transition duration-500 ease-in-out transform rounded-full bg-cyan-200 text-textLight dark:bg-darkBackground dark:text-text"
               >
-                <div
-                  className={`transition-transform transform duration-300 ease-in-out ${
-                    darkMode ? "translate-y-2 " : "-translate-y-2"
-                  }`}
-                >
-                  {darkMode ? (
+                <div className="transition-transform duration-300 ease-in-out transform -translate-y-2 dark:translate-y-2">
+                  {theme === "dark" ? (
                     <MdOutlineDarkMode className="text-yellow-500" />
                   ) : (
                     <MdSunny className="text-yellow-500" />
