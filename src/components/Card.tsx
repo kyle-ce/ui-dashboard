@@ -15,7 +15,7 @@ const Card = ({ data }: ICard) => {
       tabIndex={0}
       role="button"
       ref={cardRef}
-      className="flex flex-col items-center justify-between w-full p-4 transition-transform duration-300 ease-in-out rounded-lg shadow-md bg-onSurface hover:cursor-pointer hover:scale-105 hover:shadow-lg"
+      className="flex flex-col items-center justify-between w-full p-4 transition-transform duration-300 ease-in-out rounded-lg shadow-md bg-onSurface hover:cursor-pointer hover:scale-105 hover:shadow-lg dark:bg-darkSurface dark:text-darkText"
     >
       <h1 className="mb-2 text-lg font-semibold text-center truncate ">
         {title}

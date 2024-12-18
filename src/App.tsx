@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import { cards } from "./data/Card";
-import { MdOutlineDarkMode, MdOutlineLightMode, MdSunny } from "react-icons/md";
+import { MdOutlineDarkMode, MdSunny } from "react-icons/md";
 
 function App() {
   // Track dark mode state in localStorage or useState
@@ -23,7 +23,7 @@ function App() {
   return (
     <main className="w-full bg-background dark:bg-darkBackground">
       {/* Header */}
-      <header className="fixed flex items-center justify-between w-full h-16 px-4 shadow-md bg-primary text-textLight dark:bg-darkSurface dark:text-darkText">
+      <header className="fixed flex items-center justify-between w-full h-16 px-4 shadow-md bg-primary dark:bg-darkPrimary dark:text-darkText text-textSecondary ">
         <div className="text-xl font-bold">My Dashboard</div>
         <nav>
           <ul className="flex space-x-4">
@@ -46,7 +46,7 @@ function App() {
               {/* Dark Mode Toggle Button */}
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-full bg-cyan-200 text-textLight dark:bg-darkBackground dark:text-text"
+                className="p-2 transition duration-500 ease-in-out transform rounded-full bg-cyan-200 text-textLight dark:bg-darkBackground dark:text-text"
               >
                 <div
                   className={`transition-transform transform duration-300 ease-in-out ${
@@ -68,13 +68,15 @@ function App() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="w-full h-[400px] bg-secondary flex flex-col items-center justify-center text-center text-textLight shadow-md dark:bg-darkSurface dark:text-darkText pt-8"
+        className="w-full h-[400px] bg-secondary  dark:bg-gradient-to-t dark:from-onDarkSurface dark:to-darkBackground flex flex-col items-center justify-center text-center text-textSecondary dark:text-darkText shadow-md pt-8 px-4"
       >
-        <h1 className="text-4xl font-bold">Welcome to My Dashboard</h1>
-        <p className="mt-2 text-lg">
+        <h1 className="text-4xl font-bold tracking-wide dark:text-darkPrimary">
+          Welcome to My Dashboard
+        </h1>
+        <p className="mt-2 text-lg dark:text-darkTextSecondary">
           A clean and responsive UI for all your needs.
         </p>
-        <button className="px-6 py-2 mt-4 text-white transition duration-300 rounded hover:ease-in-out bg-primary hover:scale-105 hover:shadow-xl dark:bg-surface dark:text-text ">
+        <button className="px-6 py-2 mt-4 text-white transition-transform duration-300 rounded bg-primary dark:bg-darkPrimary hover:scale-105 hover:shadow-lg hover:bg-accent dark:hover:bg-darkAccent">
           Get Started
         </button>
       </section>
@@ -82,7 +84,7 @@ function App() {
       {/* Card Grid */}
       <section
         id="features"
-        className="w-full py-8 shadow-md bg-surface dark:bg-darkSurface"
+        className="w-full py-8 shadow-md bg-surface dark:bg-gradient-to-t dark:from-onDarkSurface dark:to-darkBackground dark:text-darkText"
       >
         <h2 className="mb-6 text-2xl font-semibold text-center text-text dark:text-darkText">
           Explore Features
@@ -96,7 +98,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="flex items-center justify-center w-full h-16 text-sm text-textLight bg-primary dark:bg-darkSurface dark:text-darkText">
+      <footer className="flex items-center justify-center w-full h-16 text-sm text-textSecondary bg-primary dark:bg-darkPrimary dark:text-darkText">
         © 2024 My Dashboard. All rights reserved.
       </footer>
     </main>

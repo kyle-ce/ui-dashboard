@@ -5,22 +5,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#00695c", // Dark Teal (light mode)
-        secondary: "#26a69a", // Light Teal (light mode)
-        surface: "#f5f5f5", // Light Gray (for cards and surfaces in light mode)
-        onSurface: "#fff", // Contrast lighter than surface
+        // Light Mode Colors
+        primary: "#00695c", // Dark Teal
+        secondary: "#26a69a", // Light Teal
+        surface: "#f5f5f5", // Light Gray
+        onSurface: "#fff", // White
+        background: "#f0f0f0", // Light Background
+        text: "#333333", // Dark Text
+        textSecondary: "#fff", // White Text for headers/footers
+        accent: "#ff4081", // Accent Color
 
         // Dark Mode Colors
-        darkBackground: "#121212", // Dark background for dark mode
-        darkSurface: "#1e1e1e", // Dark surface for cards or sections in dark mode
-        darkText: "#fff", // Light text color for dark mode
-        darkTextLight: "#b0b0b0", // Lighter text for secondary elements in dark mode
-
-        background: "#f0f0f0", // Light background (light mode)
-        text: "#333333", // Dark text (light mode)
-        textLight: "#fff", // White text for light mode (headers, footers, etc.)
-        border: "#e0e0e0", // Light border color for light mode
-        accent: "#ff4081", // Accent color (can remain constant for both modes)
+        darkPrimary: "#005f56", // Deep Teal for Primary Elements
+        darkSecondary: "#217d74", // Subdued Teal for Highlights
+        darkBackground: "#212121", // Dark background
+        darkSurface: "#2f2f2f", // Dark surface for cards/sections
+        onDarkSurface: "#0d0d0d", // Almost Black
+        darkText: "#ececec", // Main Text Color
+        darkTextSecondary: "#a8a8a8", // Neutral Gray for Secondary Text
+        darkAccent: "#ff79a1", // Accent color for both modes
       },
     },
   },
